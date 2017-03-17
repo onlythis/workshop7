@@ -44,7 +44,7 @@ export default class StatusUpdateEntry extends React.Component {
     // what the user has typed in so far.
     this.setState({value: e.target.value});
   }
-  
+
   /**
    * Called when the user selects a file to upload.
    */
@@ -66,7 +66,7 @@ export default class StatusUpdateEntry extends React.Component {
     // Tell the brower to read the image in as a data URL!
     reader.readAsDataURL(file);
   }
-  
+
   /**
    * Tells the browser to request a file from the user.
    */
@@ -118,14 +118,14 @@ export default class StatusUpdateEntry extends React.Component {
                     File upload in HTML is very clunky. It can only be accomplished
                     with a <input> element of type "file", which looks different in
                     every browser.
-                    
+
                     The industry standard thing to do is to *hide* this ugly element, and
                     use a custom button to trigger it. User clicks on the camera button,
                     our JavaScript clicks on the input, and the browser asks the user to
                     upload a file.
-                    
+
                     Isn't web development great?
-                    
+
                     The following code was adapted from this StackOverflow post:
                     http://stackoverflow.com/a/16080910
                    */ }
@@ -136,7 +136,7 @@ export default class StatusUpdateEntry extends React.Component {
                   {/*
                       The "ref" attribute tells React to make the raw DOM node accessible
                       via this.refs.file
-                      
+
                       We need the raw DOM node so we can programmatically "click" on it.
                     */}
                   <input ref="file" type="file" name="file" accept=".jpg,.jpeg,.png,.gif" onChange={(e) => this.uploadImage(e)}/>
